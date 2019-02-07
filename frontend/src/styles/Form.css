@@ -65,44 +65,30 @@ input {
   justify-content: space-around;
 }
 
-
-.button {
+.buttonflex {
+  display:flex;
+  justify-content: flex-end;
+  width: auto;
   align-items: right;
+
 }
 
-.savebutton {
-  margin-left: 20px;
-  background-color: rgb(18, 77, 136);
+.buttonflex button {
+  align-items: right;
   padding: 6px 60px;
+  margin: 10px;
+  background-color: #000;
   color: white;
+  cursor: pointer;
   font-size: 20px;
-  border-radius: 10px;
+  border-radius: 40px;
+  /* background-color: rgb(18, 77, 136); */
 }
 
 .savebutton:hover {
   background-color: #009900;
-  color: white;
-  cursor: pointer;
-}
-
-.cancelbutton{
-  background-color: rgb(18, 77, 136);
-  padding: 6px 50px;
-  color:white;
-  font-size: 20px;
-  border-radius: 10px;
 }
 
 .cancelbutton:hover {
   background-color: #FF0000;
-  color: white;
-  cursor: pointer;
-}
-
-.buttonflex{
-  display:flex;
-  justify-content: space-around;
-  width: auto;
-  align-items: right;
-  padding-left: 160px;
 }

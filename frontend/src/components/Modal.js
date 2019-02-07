@@ -18,27 +18,27 @@ const subFunction = function(props, isActive = true) {
     if (isActive) {
         if (props.customerData.status === "lead") {
             changes = {"status":"lodgement"}
-        } else if(props.customerData.status === "lodgement")
+        } else if (props.customerData.status === "lodgement")
         {
             changes = {"status":"approval"}
-        }else if(props.customerData.status === "approval")
+
+        } else if (props.customerData.status === "approval")
         {
             changes = {"status":"settlement"}
-        }else if(props.customerData.status === "lead")
-        {
-            changes = {"status":"settlement"}
+        } else {
+            //Do nothing
         }
     }
     else {
         if (props.customerData.status === "lead") {
             changes = {"status":"lead lost"}
-        } else if(props.customerData.status === "lodgement")
+        } else if (props.customerData.status === "lodgement")
         {
             changes = {"status":"lodgement withdrawn"}
-        }else if(props.customerData.status === "approval")
+        } else if (props.customerData.status === "approval")
         {
             changes = {"status":"approval withdrawn"}
-        }else {
+        } else {
             //Do nothing
         }
     }
@@ -86,8 +86,8 @@ const Modal = (props) => {
 
 
                 <div className="modal-footer">
-                    <button className="btn-cancel" onClick={() => subFunction(props)}>MOVE TO LODGEMENT</button>
-                    <button className="btn-continue" onClick={() => subFunction(props, false)}>LEAD LOST</button>
+                    <button className="btn-continue" onClick={() => subFunction(props)}>MOVE TO LODGEMENT</button>
+                    <button className="btn-cancel" onClick={() => subFunction(props, false)}>LEAD LOST</button>
                 </div>
             </div>
         </div>
@@ -120,8 +120,8 @@ const Modal = (props) => {
     
     
                     <div className="modal-footer">
-                        <button className="btn-cancel" onClick={() => subFunction(props)}>MOVE TO APPROVALS</button>
-                        <button className="btn-continue"  onClick={() => subFunction(props, false)}>Lodgement Withdrawn</button>
+                        <button className="btn-continue" onClick={() => subFunction(props)}>MOVE TO APPROVALS</button>
+                        <button className="btn-cancel"  onClick={() => subFunction(props, false)}>Lodgement Withdrawn</button>
                     </div>
                 </div>
             </div>
@@ -155,8 +155,8 @@ const Modal = (props) => {
     
     
                     <div className="modal-footer">
-                        <button className="btn-cancel" onClick={() => subFunction(props)}>MOVE TO SETTLEMENT</button>
-                        <button className="btn-continue"  onClick={() => subFunction(props, false)}>Approval Withdrawn</button>
+                        <button className="btn-continue" onClick={() => subFunction(props)}>MOVE TO SETTLEMENT</button>
+                        <button className="btn-cancel"  onClick={() => subFunction(props, false)}>Approval Withdrawn</button>
                     </div>
                 </div>
             </div>

@@ -94,7 +94,7 @@ class ReferrerLeaderboard extends Component {
                             <tr className="leads-back">
                                 <th>Month</th>
                                 <th>LP Staff</th>
-                                <th>SP Staff</th>
+                                <th>SPP Staff</th>
                                 <th>Marketing Campaigns</th>
                                 <th>BDM Staff</th>
                                 <th>TFC</th>

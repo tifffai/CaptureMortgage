@@ -64,7 +64,8 @@ class FormUpdate extends Component {
         axios.patch(url, changes, config)
         .then(resp => {
             console.log(resp)
-            this.setState({ message: 'Update saved', error: null })
+            window.setInterval(this.setState({ message: 'Update saved', error: null }), 10000)
+            window.location.reload();
         })
         .catch(err => {
             console.log(err.response)
@@ -115,7 +116,7 @@ class FormUpdate extends Component {
                                     <select className='inputbox' name="Referrer" id="referrer" onChange={this.handleInputChange}>
                                     <option selected="selected" value="">{this.props.customerData.referrer}</option>
                                         <option value="LP Staff">LP Staff</option>
-                                        <option value="SP Staff">SP Staff</option>
+                                        <option value="SPP Staff">SPP Staff</option>
                                         <option value="Marketing Campaigns">Marketing Campaigns</option>
                                         <option value="BDM Staff">BDM Staff</option>
                                         <option value="TFC">TFC</option>
@@ -138,11 +139,11 @@ class FormUpdate extends Component {
                                         <option value="Construction">Construction</option>
                                     </select>
 
-                                    <input value= {this.props.customerData.customerName}  name="CustomerName" className='inputbox'  type="text" required="required" id="customerName" onChange={this.handleInputChange}></input>
+                                    <input placeholder= {this.props.customerData.customerName}  name="CustomerName" className='inputbox'  type="text" required="required" id="customerName" onChange={this.handleInputChange}></input>
 
-                                    <input value= {this.props.customerData.amount} name="Amount" className='inputbox' type="number" required="required" id="amount" min="1" onChange={this.handleInputChange}></input>
+                                    <input placeholder= {this.props.customerData.amount} name="Amount" className='inputbox' type="number" required="required" id="amount" min="1" onChange={this.handleInputChange}></input>
 
-                                    <input value= {this.props.customerData.dateOfLead}  name="DateOfLead" className='inputbox' type="date" id="dateOfLead" onChange={this.handleInputChange}></input>
+                                    <input placeholder= {this.props.customerData.dateOfLead}  name="DateOfLead" className='inputbox' type="date" id="dateOfLead" onChange={this.handleInputChange}></input>
 
                                     <select className='inputbox' name="Lender" id="lender" onChange={this.handleInputChange}>
                                     <option selected="selected" value="">{this.props.customerData.lender}</option>
@@ -179,9 +180,6 @@ class FormUpdate extends Component {
                             </div>
 
                             <div className='buttonflex'>
-                                <button onClick={this.submitForm} className='savebutton'>
-                                        SAVE
-                                </button>
                                 {this.state.isShowing ? 
                                     <div
                                         onClick={this.closeModalHandler} className="back-drop">
@@ -191,6 +189,9 @@ class FormUpdate extends Component {
                                 <button  
                                     className="open-modal-btn" onClick={this.openModalHandler}> 
                                         Update Status
+                                </button>
+                                <button onClick={this.submitForm} className='savebutton'>
+                                        SAVE
                                 </button>
 
                                 { message && <p>{ message }</p> }

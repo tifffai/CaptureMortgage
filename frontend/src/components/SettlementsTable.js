@@ -77,10 +77,10 @@ class SettlementsTable extends Component {
             <tbody>
               {settlements.map((settlement, i) => {
                 return (
-                <tr key={i} onClick={() => this.handleUpdateClick(settlement)}>
+                <tr key={i}>
                     <td>{settlement.id}</td>
                     <td>{this.displayDate(settlement.statusDate)}</td>
-                    <td><a className= 'customerMO' href={'#' + settlement.id}>{settlement.customerName}</a></td>
+                    <td>{settlement.customerName}</td>
                     <td>{settlement.category}</td>
                     <td>${Intl.NumberFormat().format(settlement.amount)}</td>
                     <td>{settlement.lender}</td>

@@ -52,6 +52,10 @@ class Form extends Component {
             }
         })
     }
+
+    cancelForm() {
+        this.props.history.push('/leads')
+    }
     
     render() {
         const { error, message } = this.state
@@ -87,7 +91,7 @@ class Form extends Component {
                                 <select className='inputbox' name="Referrer" id="referrer" onChange={this.handleInputChange}>
                                     <option value="">--select--</option>
                                     <option value="LP Staff">LP Staff</option>
-                                    <option value="SP Staff">SP Staff</option>
+                                    <option value="SPP Staff">SPP Staff</option>
                                     <option value="Marketing Campaigns">Marketing Campaigns</option>
                                     <option value="BDM Staff">BDM Staff</option>
                                     <option value="TFC">TFC</option>
@@ -151,7 +155,7 @@ class Form extends Component {
                         </div>
 
                         <div className='buttonflex'>
-                            <button className='cancelbutton'>
+                            <button onClick={this.submitForm} className='cancelbutton'>
                                 CANCEL
                             </button>
                             <button onClick={this.submitForm} className='savebutton'>
